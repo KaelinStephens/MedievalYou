@@ -1,0 +1,13 @@
+C:\Users\ripli\Desktop\repos\MedievalTextGame\MedievalTextGame\obj\Debug\netcoreapp3.1\MedievalTextGame.csproj.AssemblyReference.cache
+C:\Users\ripli\Desktop\repos\MedievalTextGame\MedievalTextGame\obj\Debug\netcoreapp3.1\MedievalTextGame.AssemblyInfoInputs.cache
+C:\Users\ripli\Desktop\repos\MedievalTextGame\MedievalTextGame\obj\Debug\netcoreapp3.1\MedievalTextGame.AssemblyInfo.cs
+C:\Users\ripli\Desktop\repos\MedievalTextGame\MedievalTextGame\obj\Debug\netcoreapp3.1\MedievalTextGame.csproj.CoreCompileInputs.cache
+C:\Users\ripli\Desktop\repos\MedievalTextGame\MedievalTextGame\bin\Debug\netcoreapp3.1\MedievalTextGame.exe
+C:\Users\ripli\Desktop\repos\MedievalTextGame\MedievalTextGame\bin\Debug\netcoreapp3.1\MedievalTextGame.deps.json
+C:\Users\ripli\Desktop\repos\MedievalTextGame\MedievalTextGame\bin\Debug\netcoreapp3.1\MedievalTextGame.runtimeconfig.json
+C:\Users\ripli\Desktop\repos\MedievalTextGame\MedievalTextGame\bin\Debug\netcoreapp3.1\MedievalTextGame.runtimeconfig.dev.json
+C:\Users\ripli\Desktop\repos\MedievalTextGame\MedievalTextGame\bin\Debug\netcoreapp3.1\MedievalTextGame.dll
+C:\Users\ripli\Desktop\repos\MedievalTextGame\MedievalTextGame\bin\Debug\netcoreapp3.1\MedievalTextGame.pdb
+C:\Users\ripli\Desktop\repos\MedievalTextGame\MedievalTextGame\obj\Debug\netcoreapp3.1\MedievalTextGame.dll
+C:\Users\ripli\Desktop\repos\MedievalTextGame\MedievalTextGame\obj\Debug\netcoreapp3.1\MedievalTextGame.pdb
+C:\Users\ripli\Desktop\repos\MedievalTextGame\MedievalTextGame\obj\Debug\netcoreapp3.1\MedievalTextGame.genruntimeconfig.cache
