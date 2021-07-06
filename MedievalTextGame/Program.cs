@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 namespace MedievalTextGame
 {
     class Program
@@ -12,7 +13,7 @@ namespace MedievalTextGame
 
 
 
-        }
+        }   
 
         public static Human GetRace()
         {
