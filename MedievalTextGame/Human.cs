@@ -7,29 +7,20 @@ namespace MedievalTextGame
 {
     public class Human
     {
-        private Human human;
-
-        public Human(Human human)
-        {
-            this.human = human;
-        }
+        public Human human = CreateNewHuman();
 
         public Human()
         {
-
+            string welcome = $"{FirstName} {LastName} is a {Age} year old Human who identifies as {Gender}. {PathMessage}."; //character creation message prints when a new character is created.
+            Console.WriteLine(welcome);
         }
-
-        public Human(string firstName, string lastName,  int age, string gender, string pronoun, string path, string pathMessage)
+        public Human(Human human)
         {
-            FirstName = firstName;
-            LastName = lastName;
-            Age = age;
-            Gender = gender;
-            Pronoun = pronoun;
-            Path = path;
-            PathMessage = pathMessage;
-            Console.WriteLine($"{FirstName} {LastName} is a {Age} year old Human who identifies as {Gender}. {FirstName} {PathMessage}.");  //character creation message prints when a new character is created.
+            this.human = human;
+            string welcome = $"{FirstName} {LastName} is a {Age} year old Human who identifies as {Gender}. {PathMessage}."; //character creation message prints when a new character is created.
+            Console.WriteLine(welcome);
         }
+      
         public string FirstName{get; set;}
         public string LastName { get; set; }
         public int Age { get; set; }
@@ -37,6 +28,7 @@ namespace MedievalTextGame
         public string Pronoun { get; set; }
         public string Path { get; set; }
         public string PathMessage { get; set; } //this property is purely for having fun with the character creation message.
+        
         public static Human CreateNewHuman()   //Human class method called from Main to create a new character.
         {
             Console.WriteLine("What is your first name?");
@@ -51,14 +43,26 @@ namespace MedievalTextGame
             Console.WriteLine();
             string pronoun = GetPronoun(gender);  //calls GetPronoun method to set the character's pronouns based on what gender was chosen. If "other" was chosen, also prints additional messages and requests.
             string path = GetPath();           //calls GetPath method to populate path property with a game-specific value.       
-            string pathMessage = GetPathMessage(path);     //calls GetPathMessage method to set the character's pathMessage based on what path was chosen.
+            string pathMessage = GetPathMessage(path, firstName);     //calls GetPathMessage method to set the character's pathMessage based on what path was chosen.
             Console.WriteLine();
+            var player1 =
+                AssignValuesToNewHumanProperties(firstName, lastName, age, gender, pronoun, path, pathMessage); //actually populates the properties of the character to Human class.
 
-
-            return new Human(firstName, lastName, age, gender, pronoun, path, pathMessage); //actually populates the properties and creates the character.
-
+            return player1; //creates the character and sends to Human(human) constructor.
         }
 
+        public static Human AssignValuesToNewHumanProperties(string firstName, string lastName, int age, string gender, string pronoun, string path, string pathMessage)
+        {
+            var human = new Human();
+            human.FirstName = firstName;
+            human.LastName = lastName;
+            human.Age = age;
+            human.Gender = gender;
+            human.Pronoun = pronoun;
+            human.Path = path;
+            human.PathMessage = pathMessage;
+            return human;
+        }
         public static string GetPath()          //creates a loop requiring player to choose a provided value then returns the path to CreateNewHuman() method.
         {
             string path;     
@@ -91,24 +95,24 @@ namespace MedievalTextGame
             return path;  //just here to satisfy the return requirements for the method. This line will never get used. All returns can only come from within the do/while loop.
         }
 
-        public static string GetPathMessage(string path)    //creates a switch case for the pathMessage based on the path chosen. Then returns the pathMessage to CreateNewHuman() method.
+        public static string GetPathMessage(string path, string firstName)    //creates a switch case for the pathMessage based on the path chosen. Then returns the pathMessage to CreateNewHuman() method.
         {
             string pathMessage;
             switch (path)
             {
                 case "knight":
                     pathMessage =
-                        "slaves the days away as the Great Knight Sir MacGuffin's page hoping to someday become a knight. Too bad even the smallest of knives are too heavy to wield";
+                        $"{firstName} slaves the days away as the Great Knight Sir MacGuffin's page hoping to someday become a knight. Too bad even the smallest of knives are too heavy to wield";
                     return pathMessage;
                 case "thief":
-                    pathMessage = "is 'so lazy,' according to Father Guile, 'as to forgo the God-given right of all peasants [fieldwork] to pursue a life of sin; taking what was not rightfully earned. Now if you'd be so good as to add to the collection plate...";
+                    pathMessage = $"{firstName} is 'so lazy,' according to Father Guile, 'as to forgo the God-given right of all peasants [fieldwork] to pursue a life of sin; taking what was not rightfully earned. Now if you'd be so good as to add to the collection plate...";
                     return pathMessage;
                 case "druid":
-                    pathMessage = "drifts through the forest day after day communing with nature...Well, trying to anyway. If only there was a Grove of Druids around to teach even the basics..";
+                    pathMessage = $"{firstName} drifts through the forest day after day communing with nature...Well, trying to anyway. If only there was a Grove of Druids around to teach even the basics..";
                     return pathMessage;
                 case "mage":
                     pathMessage =
-                        "spends most days ineffectually cursing people, waggling sticks in the air with nary a twinkling light, and hocking cure-alls concocted from whatever herb-looking things were around at the time--typically, grass, leaves, and sticks";
+                        $"{firstName} spends most days ineffectually cursing people, waggling sticks in the air with nary a twinkling light, and hocking cure-alls concocted from whatever herb-looking things were around at the time--typically, grass, leaves, and sticks";
                     return pathMessage;
             }
 
@@ -189,10 +193,7 @@ namespace MedievalTextGame
             switch (gender)
             {
                 case "other":
-                    Console.WriteLine("*sympithetic wince* You're going to have a hard time.");
-                    Console.WriteLine("What pronoun would you like to use?");
-                    pronoun = Console.ReadLine();
-                    Console.WriteLine();
+                    pronoun = OtherPronounGetter();   //calls method which gets user-input for unique pronoun.
                     return pronoun;
                 case "male":
                     pronoun = "he";
@@ -205,7 +206,15 @@ namespace MedievalTextGame
             return pronoun;   //just here to satisfy the return requirements for the method. This line will never get used. All returns can only come from within the do/while loop.
 
         }
-       
-    
+
+        public static string OtherPronounGetter()    //method gets and returns to GetPronoun method a unique pronoun for players with genders "other".
+        {
+            string pronoun;
+            Console.WriteLine("*sympithetic wince* You're going to have a hard time.");
+            Console.WriteLine("What pronoun would you like to use?");
+            pronoun = Console.ReadLine();
+            Console.WriteLine();
+            return pronoun;
+        }
     }
 }

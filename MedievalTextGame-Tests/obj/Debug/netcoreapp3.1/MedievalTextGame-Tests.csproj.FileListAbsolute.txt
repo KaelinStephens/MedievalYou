@@ -1,0 +1,4 @@
+C:\Users\ripli\Desktop\repos\MedievalTextGame\MedievalTextGame-Tests\obj\Debug\netcoreapp3.1\MedievalTextGame-Tests.csproj.AssemblyReference.cache
+C:\Users\ripli\Desktop\repos\MedievalTextGame\MedievalTextGame-Tests\obj\Debug\netcoreapp3.1\MedievalTextGame-Tests.AssemblyInfoInputs.cache
+C:\Users\ripli\Desktop\repos\MedievalTextGame\MedievalTextGame-Tests\obj\Debug\netcoreapp3.1\MedievalTextGame-Tests.AssemblyInfo.cs
+C:\Users\ripli\Desktop\repos\MedievalTextGame\MedievalTextGame-Tests\obj\Debug\netcoreapp3.1\MedievalTextGame-Tests.csproj.CoreCompileInputs.cache
