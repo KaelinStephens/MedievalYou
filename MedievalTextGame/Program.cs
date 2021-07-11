@@ -10,7 +10,7 @@ namespace MedievalTextGame
             Console.WriteLine("Welcome to MEDIEVAL YOU");
             Console.WriteLine();
             Human player1 = GetRace(); //creates new character
-            LetAdventureCommence(player1); //the adventure starts
+            //HeroJourney.LetAdventureCommence(player1); //the adventure starts
 
 
         }   

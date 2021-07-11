@@ -7,20 +7,30 @@ namespace MedievalTextGame
 {
     public class Human
     {
-        public Human human = CreateNewHuman();
+        private Human human;
 
-        public Human()
-        {
-            string welcome = $"{FirstName} {LastName} is a {Age} year old Human who identifies as {Gender}. {PathMessage}."; //character creation message prints when a new character is created.
-            Console.WriteLine(welcome);
-        }
         public Human(Human human)
         {
             this.human = human;
-            string welcome = $"{FirstName} {LastName} is a {Age} year old Human who identifies as {Gender}. {PathMessage}."; //character creation message prints when a new character is created.
-            Console.WriteLine(welcome);
         }
-      
+
+        public Human()
+        {
+
+        }
+
+        public Human(string firstName, string lastName, int age, string gender, string pronoun, string path, string pathMessage)
+        {
+            FirstName = firstName;
+            LastName = lastName;
+            Age = age;
+            Gender = gender;
+            Pronoun = pronoun;
+            Path = path;
+            PathMessage = pathMessage;
+            Console.WriteLine($"{FirstName} {LastName} is a {Age} year old Human who identifies as {Gender}. {PathMessage}.");  //character creation message prints when a new character is created.
+        }
+
         public string FirstName{get; set;}
         public string LastName { get; set; }
         public int Age { get; set; }
@@ -45,24 +55,12 @@ namespace MedievalTextGame
             string path = GetPath();           //calls GetPath method to populate path property with a game-specific value.       
             string pathMessage = GetPathMessage(path, firstName);     //calls GetPathMessage method to set the character's pathMessage based on what path was chosen.
             Console.WriteLine();
-            var player1 =
-                AssignValuesToNewHumanProperties(firstName, lastName, age, gender, pronoun, path, pathMessage); //actually populates the properties of the character to Human class.
+            Human player1 = new Human(firstName, lastName, age, gender, pronoun, path, pathMessage); //actually populates the properties of the character to Human class.
 
-            return player1; //creates the character and sends to Human(human) constructor.
+            return player1; 
         }
 
-        public static Human AssignValuesToNewHumanProperties(string firstName, string lastName, int age, string gender, string pronoun, string path, string pathMessage)
-        {
-            var human = new Human();
-            human.FirstName = firstName;
-            human.LastName = lastName;
-            human.Age = age;
-            human.Gender = gender;
-            human.Pronoun = pronoun;
-            human.Path = path;
-            human.PathMessage = pathMessage;
-            return human;
-        }
+      
         public static string GetPath()          //creates a loop requiring player to choose a provided value then returns the path to CreateNewHuman() method.
         {
             string path;     
@@ -102,17 +100,24 @@ namespace MedievalTextGame
             {
                 case "knight":
                     pathMessage =
-                        $"{firstName} slaves the days away as the Great Knight Sir MacGuffin's page hoping to someday become a knight. Too bad even the smallest of knives are too heavy to wield";
+                        $"{firstName} slaves the days away as the Great Knight Sir MacGuffin's page hoping to someday " +
+                        $"become a knight. Too bad even the smallest of knives are too heavy to wield";
                     return pathMessage;
                 case "thief":
-                    pathMessage = $"{firstName} is 'so lazy,' according to Father Guile, 'as to forgo the God-given right of all peasants [fieldwork] to pursue a life of sin; taking what was not rightfully earned. Now if you'd be so good as to add to the collection plate...";
+                    pathMessage = $"{firstName} is 'so lazy,' according to Father Guile, 'as to forgo the God-given " +
+                                  $"right of all peasants [fieldwork] to pursue a life of sin; taking what was not " +
+                                  $"rightfully earned. Now if you'd be so good as to add to the collection plate...";
                     return pathMessage;
                 case "druid":
-                    pathMessage = $"{firstName} drifts through the forest day after day communing with nature...Well, trying to anyway. If only there was a Grove of Druids around to teach even the basics..";
+                    pathMessage = $"{firstName} drifts through the forest day after day communing with nature..." +
+                                  $"Well, trying to anyway. If only there was a Grove of Druids around to teach even" +
+                                  $" the basics..";
                     return pathMessage;
                 case "mage":
                     pathMessage =
-                        $"{firstName} spends most days ineffectually cursing people, waggling sticks in the air with nary a twinkling light, and hocking cure-alls concocted from whatever herb-looking things were around at the time--typically, grass, leaves, and sticks";
+                        $"{firstName} spends most days ineffectually cursing people, waggling sticks in the air with " +
+                        $"nary a twinkling light, and hocking cure-alls concocted from whatever herb-looking things " +
+                        $"were around at the time--typically, grass, leaves, and sticks";
                     return pathMessage;
             }
 

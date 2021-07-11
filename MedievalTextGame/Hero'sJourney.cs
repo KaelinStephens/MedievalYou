@@ -11,6 +11,13 @@ namespace MedievalTextGame
             var enterPlayer1 = EnterPlayer1(player1);  //takes player1's path to output an appropriate entry scene.
             Console.WriteLine(
                 $"'Herbs for sale!' An old peddler calls as you walk through the village on your way {enterPlayer1}");
+            Console.WriteLine();
+            Console.WriteLine($"'Herbs for sale!' He calls again. 'Herbs for sale! {player1.FirstName}, herbs?' " +
+                              $"He proffers you a rather full looking cloth bag.");
+            Console.WriteLine();
+            Console.WriteLine("But, wait, you've never seen this peddler before. How did he know your name?");
+            Console.WriteLine();
+            IHeroActions.TalkToPeddlerConsequence();
         }
 
         public static string EnterPlayer1(Human player1)
@@ -33,6 +40,7 @@ namespace MedievalTextGame
 
             return "no path to enter from";
         }
+        
 
         //  peddler calls out
         //  player going somewhere
