@@ -37,8 +37,8 @@ namespace MedievalTextGame
                 Console.WriteLine("What is your destiny?");
                 Console.WriteLine("Knight");
                 Console.WriteLine("Thief");
-                // Console.WriteLine("Druid");
-                // Console.WriteLine("Mage");
+                Console.WriteLine("Druid");
+                Console.WriteLine("Mage");
                 path = Console.ReadLine().ToLower();
                 switch (path)
                 {
@@ -260,6 +260,7 @@ namespace MedievalTextGame
         {
             Console.WriteLine("'I've never met you before. How do you know my name?'");
             Console.WriteLine("'Never mind that, herbs?' He proffers the bulging bag again.");
+            Console.WriteLine();
             HeroActions.DoesPlayerAcceptBag(player1);
         }
 

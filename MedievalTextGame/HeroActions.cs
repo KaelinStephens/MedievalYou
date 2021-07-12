@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Diagnostics.CodeAnalysis;
-using System.Text;
-using System.Linq;
-using System.Runtime.CompilerServices;
 
 namespace MedievalTextGame
 {
@@ -29,6 +23,8 @@ namespace MedievalTextGame
             {
                 HeroJourney.ApproachPeddler(player1);
             }
+
+            Console.WriteLine();
         }
 
         public static void DoesPlayerAcceptBag(Human player1)
@@ -51,6 +47,8 @@ namespace MedievalTextGame
             {
                 HeroJourney.AcceptHerbBag(player1);
             }
+
+            Console.WriteLine();
         }
 
         public static void ReactionToPricePathGetter(Human player1)
@@ -86,8 +84,8 @@ namespace MedievalTextGame
                 Console.WriteLine("B: Negotiate");
                 Console.WriteLine("C: Steal the bag");
                 Console.WriteLine("D: You don't want the herbs");
-                Console.WriteLine();
                 choice = Console.ReadKey().KeyChar;
+                Console.WriteLine();
                 switch (choice)
                 {
                     case 'a':
@@ -119,8 +117,8 @@ namespace MedievalTextGame
                 Console.WriteLine("B: Negotiate");
                 Console.WriteLine("C: Steal the bag");
                 Console.WriteLine("D: You don't want the herbs");
-                Console.WriteLine();
                 choice = Console.ReadKey().KeyChar;
+                Console.WriteLine();
                 switch (choice)
                 {
                     case 'a':
@@ -152,8 +150,8 @@ namespace MedievalTextGame
                 Console.WriteLine("B: Inquire about work");
                 Console.WriteLine("C: Steal the bag");
                 Console.WriteLine("D: You don't want the herbs");
-                Console.WriteLine();
                 choice = Console.ReadKey().KeyChar;
+                Console.WriteLine();
                 switch (choice)
                 {
                     case 'a':
@@ -186,15 +184,15 @@ namespace MedievalTextGame
                 Console.WriteLine("C: Steal the bag");
                 Console.WriteLine("D: You don't want the herbs");
                 Console.WriteLine("E: Agree to work off debt");
-                Console.WriteLine();
                 choice = Console.ReadKey().KeyChar;
+                Console.WriteLine();
                 switch (choice)
                 {
                     case 'a':
                         HeroJourney.ComplainAboutPrice(player1);
                         break;
                     case 'b':
-                        HeroJourney.InquireAboutDebtWork(player1);
+                        HeroJourney.NegotiatePrice(player1);
                         break;
                     case 'c':
                         HeroJourney.StealTheBag(player1);
