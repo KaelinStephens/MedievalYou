@@ -3,7 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31321.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedievalTextGame", "MedievalTextGame\MedievalTextGame.csproj", "{80FBB269-8C17-4A21-8BB0-5020E0B6C783}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MedievalTextGame", "MedievalTextGame\MedievalTextGame.csproj", "{80FBB269-8C17-4A21-8BB0-5020E0B6C783}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedievalTextGame-Tests", "MedievalTextGame-Tests\MedievalTextGame-Tests.csproj", "{BDE0B282-7EEF-4CE4-AD0C-8E2B7F7EA1BB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{80FBB269-8C17-4A21-8BB0-5020E0B6C783} = {80FBB269-8C17-4A21-8BB0-5020E0B6C783}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +20,10 @@ Global
 		{80FBB269-8C17-4A21-8BB0-5020E0B6C783}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80FBB269-8C17-4A21-8BB0-5020E0B6C783}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80FBB269-8C17-4A21-8BB0-5020E0B6C783}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDE0B282-7EEF-4CE4-AD0C-8E2B7F7EA1BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDE0B282-7EEF-4CE4-AD0C-8E2B7F7EA1BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDE0B282-7EEF-4CE4-AD0C-8E2B7F7EA1BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDE0B282-7EEF-4CE4-AD0C-8E2B7F7EA1BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
